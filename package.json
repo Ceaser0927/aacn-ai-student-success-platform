@@ -9,9 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nivo/annotations": "^0.80.0",
+    "@nivo/axes": "^0.80.0",
     "@nivo/bar": "^0.80.0",
     "@nivo/bump": "^0.80.0",
+    "@nivo/colors": "^0.80.0",
+    "@nivo/core": "^0.80.0",
+    "@nivo/legends": "^0.80.0",
     "@nivo/line": "^0.80.0",
+    "@nivo/scales": "^0.80.0",
+    "@nivo/tooltip": "^0.80.0",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
     "firebase": "^9.13.0",
