@@ -1,34 +1,93 @@
 import Link from 'next/link'
-import React from 'react'
-import { RiHeartPulseFill,RiMentalHealthFill } from 'react-icons/ri'
-import {GiNightSleep} from 'react-icons/gi'
-import {CgGym} from 'react-icons/cg'
-import {MdDashboard,MdFoodBank,MdOutlineHelp,MdLogout } from 'react-icons/md'
+import React, { useState } from 'react'
+import {
+  RiHeartPulseFill,
+  RiHome5Fill,
+  RiTeamFill,
+  RiFileChartFill,
+  RiRobot2Fill,
+  RiArrowLeftSLine,
+  RiArrowRightSLine,
+  RiBrainLine
+} from 'react-icons/ri'
+import { MdWarning } from 'react-icons/md'
 import NavLink from './NavLink'
 
 const Navbar = () => {
-    return (
-        <div className='bg-black flex-[.2] md:h-[100vh] flex items-center md:items-start md:flex-col gap-4 overflow-hidden'>
-            <Link href="/">
-                <div className='md:w-full md:mt-4 flex gap-2 text-2xl items-center text-white p-4'>
-                    <RiHeartPulseFill className='text-2xl' />
-                    <span>H.care</span>
-                </div>
-            </Link>
-            <div className="flex md:flex-col ml-auto mr-5 text-white items-center md:items-stretch md:w-full md:gap-4 md:py-4 md:pl-4">
-                <NavLink text = "Dashboard" address={"/"} icon = {<MdDashboard />} />
-                <NavLink text = "Food" icon = {<MdFoodBank />} address ="/foodnutrition" />
-                <NavLink text = "Sleep" icon = {<GiNightSleep />} address ="/sleep" />
-                <NavLink text = "Excercise" icon = {<CgGym />} address ="/excercise" />
-                <NavLink text = "Mental Heath" icon = {<RiMentalHealthFill />} address ="/mentalhealth" />
-                <hr className='bg-white ml-3 hidden md:block my-3' />
-                <NavLink text = "Help" icon = {<MdOutlineHelp />} address ="/help" />
-                {/* <NavLink type= "logout" text = "Logout" icon = {<MdLogout />}address = "#" /> */}
-            </div>
+  const [collapsed, setCollapsed] = useState(false)
 
-            
-        </div>
-    )
+  const menuItems = [
+    {
+      text: 'Home',
+      address: '/',
+      icon: <RiHome5Fill />,
+    },
+    {
+      text: 'Students',
+      address: '/students',
+      icon: <RiTeamFill />,
+    },
+    {
+      text: 'Risk Analysis',
+      address: '/risk-analysis',
+      icon: <MdWarning />,
+    },
+    {
+      text: 'Recommendations',
+      address: '/recommendations',
+      icon: <RiRobot2Fill />,
+    },
+    {
+      text: 'Reports',
+      address: '/reports',
+      icon: <RiFileChartFill />,
+    },
+  ]
+
+  return (
+    <div
+      className={`bg-[#0F172A] md:h-screen h-auto flex items-center md:items-start md:flex-col gap-4 overflow-hidden transition-all duration-300 border-r border-slate-800 ${
+        collapsed ? 'md:w-[82px]' : 'md:w-[250px]'
+      }`}
+    >
+      <div className="md:w-full md:mt-4 flex items-center justify-between text-white p-4">
+        <Link href="/">
+          <div className="flex gap-2 text-2xl items-center cursor-pointer">
+            <RiBrainLine className="text-2xl shrink-0 text-blue-400" />
+
+            {!collapsed && (
+              <span className="font-semibold tracking-wide">
+                AACN AI
+              </span>
+            )}
+          </div>
+        </Link>
+
+        <button
+          onClick={() => setCollapsed(!collapsed)}
+          className="hidden md:flex bg-white/5 hover:bg-white/10 rounded-lg p-1 border border-white/10"
+        >
+          {collapsed ? (
+            <RiArrowRightSLine className="text-2xl text-white" />
+          ) : (
+            <RiArrowLeftSLine className="text-2xl text-white" />
+          )}
+        </button>
+      </div>
+
+      <div className="flex md:flex-col ml-auto mr-5 text-white items-center md:items-stretch md:w-full md:gap-2 md:py-4 md:px-3">
+        {menuItems.map((item) => (
+          <NavLink
+            key={item.address}
+            text={item.text}
+            address={item.address}
+            icon={item.icon}
+            collapsed={collapsed}
+          />
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default Navbar
