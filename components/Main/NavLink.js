@@ -18,11 +18,15 @@ const NavLink = ({ address, text, type, icon, collapsed }) => {
     (path === '/' && router.pathname === '/') ||
     router.pathname === path
 
+  const baseClass = collapsed
+    ? 'w-10 h-10 mx-auto flex items-center justify-center rounded-xl transition-all duration-200'
+    : 'w-[95%] mx-auto p-3 flex items-center gap-3 rounded-xl transition-all duration-200'
+
   if (type === 'logout') {
     return (
       <div
         onClick={() => handleSignOut()}
-        className="w-[95%] cursor-pointer mx-auto p-3 flex items-center gap-3 text-md hover:bg-white/10 rounded-xl transition-all duration-200"
+        className={`${baseClass} cursor-pointer text-white hover:bg-white/10`}
       >
         {icon}
         {!collapsed && <p className="hidden md:block">{text}</p>}
@@ -33,7 +37,7 @@ const NavLink = ({ address, text, type, icon, collapsed }) => {
   return (
     <Link href={path}>
       <div
-        className={`w-[95%] mx-auto p-3 flex items-center gap-3 rounded-xl transition-all duration-200 ${
+        className={`${baseClass} ${
           isActive
             ? 'bg-blue-500/20 text-blue-200 border border-blue-400/30 shadow-md'
             : 'text-white hover:bg-white/10'

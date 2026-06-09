@@ -8,7 +8,6 @@ import {
   RiRobot2Fill,
   RiArrowLeftSLine,
   RiArrowRightSLine,
-  RiBrainLine
 } from 'react-icons/ri'
 import { MdWarning } from 'react-icons/md'
 import NavLink from './NavLink'
@@ -50,18 +49,22 @@ const Navbar = () => {
         collapsed ? 'md:w-[82px]' : 'md:w-[250px]'
       }`}
     >
-      <div className="md:w-full md:mt-4 flex items-center justify-between text-white p-4">
-        <Link href="/">
-          <div className="flex gap-2 text-2xl items-center cursor-pointer">
-            <RiBrainLine className="text-2xl shrink-0 text-blue-400" />
+      <div
+        className={`md:w-full md:mt-4 flex items-center text-white p-4 ${
+          collapsed ? 'justify-center' : 'justify-between'
+        }`}
+      >
+        {!collapsed && (
+          <Link href="/">
+            <div className="flex gap-2 text-2xl items-center cursor-pointer">
+              <RiHeartPulseFill className="text-2xl shrink-0 text-blue-400" />
 
-            {!collapsed && (
               <span className="font-semibold tracking-wide">
                 AACN AI
               </span>
-            )}
-          </div>
-        </Link>
+            </div>
+          </Link>
+        )}
 
         <button
           onClick={() => setCollapsed(!collapsed)}
