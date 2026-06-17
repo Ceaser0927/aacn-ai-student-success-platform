@@ -33,6 +33,10 @@ const Header = () => {
       title: 'Reports',
       subtitle: 'Generate summaries and export student success reports.',
     },
+    '/data-import': {
+      title: 'Data Import',
+      subtitle: 'Upload course CSV files and generate prototype risk results.',
+    },
   }
 
   const currentPage = pageMap[router.pathname] || {

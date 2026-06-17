@@ -8,6 +8,7 @@ import {
   RiRobot2Fill,
   RiArrowLeftSLine,
   RiArrowRightSLine,
+  RiUploadCloud2Line,
 } from 'react-icons/ri'
 import { MdWarning } from 'react-icons/md'
 import NavLink from './NavLink'
@@ -40,6 +41,11 @@ const Navbar = () => {
       text: 'Reports',
       address: '/reports',
       icon: <RiFileChartFill />,
+    },
+    {
+      text: 'Data Import',
+      address: '/data-import',
+      icon: <RiUploadCloud2Line />,
     },
   ]
 
