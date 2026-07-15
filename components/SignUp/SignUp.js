@@ -8,6 +8,7 @@ import {
   RiLockPasswordLine,
   RiUserLine,
 } from 'react-icons/ri'
+import Link from 'next/link'
 
 const SignUp = () => {
   const router = useRouter()
@@ -176,9 +177,9 @@ const SignUp = () => {
 
             <p className="text-sm text-slate-500 mt-6 text-center">
               Already have an account?{' '}
-              <a href="/login" className="text-blue-600 font-semibold hover:underline">
+              <Link href="/login" className="text-blue-600 font-semibold hover:underline">
                 Log in
-              </a>
+              </Link>
             </p>
           </div>
         </div>

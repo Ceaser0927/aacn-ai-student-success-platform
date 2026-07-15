@@ -138,11 +138,11 @@ const MyRecommendations = () => {
             Resources
           </h2>
 
-          <p className="text-slate-500 mt-1 text-sm">
+         <p className="text-slate-500 mt-1 text-sm">
             A few places to start -- click through if a link is available,
-            or ask your instructor for more on the ones that aren't linked
+            or ask your instructor for more on the ones that are not linked
             yet.
-          </p>
+         </p>
 
           {/*
             Intentionally shows ONLY label + a real, human-verified link

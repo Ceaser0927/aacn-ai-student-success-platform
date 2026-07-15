@@ -7,6 +7,7 @@ import {
   RiMailLine,
   RiLockPasswordLine,
 } from 'react-icons/ri'
+import Link from 'next/link'
 
 const LoginPage = () => {
   const router = useRouter()
@@ -155,9 +156,9 @@ const LoginPage = () => {
 
             <p className="text-sm text-slate-500 mt-6 text-center">
               Don&apos;t have an account?{' '}
-              <a href="/signup" className="text-blue-600 font-semibold hover:underline">
+              <Link href="/signup" className="text-blue-600 font-semibold hover:underline">
                 Create account
-              </a>
+              </Link>
             </p>
           </div>
         </div>
