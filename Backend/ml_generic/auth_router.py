@@ -1,7 +1,13 @@
+import os
+import json
+from pathlib import Path
+
 from fastapi import APIRouter, Header, HTTPException
 from pydantic import BaseModel
+
 import firebase_admin
 from firebase_admin import auth, credentials
+
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 
@@ -16,19 +22,48 @@ class RegisterRequest(BaseModel):
 
 
 def init_firebase():
-    if not firebase_admin._apps:
-        cred = credentials.Certificate("firebase-service-account.json")
+    if firebase_admin._apps:
+        return
+
+    firebase_json = os.getenv("FIREBASE_SERVICE_ACCOUNT")
+    firebase_path = os.getenv("FIREBASE_SERVICE_ACCOUNT_PATH")
+    default_path = Path("firebase-service-account.json")
+
+    try:
+        if firebase_json:
+            cred_dict = json.loads(firebase_json)
+            cred = credentials.Certificate(cred_dict)
+
+        elif firebase_path and Path(firebase_path).exists():
+            cred = credentials.Certificate(firebase_path)
+
+        elif default_path.exists():
+            cred = credentials.Certificate(str(default_path))
+
+        else:
+            raise RuntimeError(
+                "Firebase service account not found. Set FIREBASE_SERVICE_ACCOUNT, "
+                "FIREBASE_SERVICE_ACCOUNT_PATH, or place firebase-service-account.json "
+                "in the Backend directory."
+            )
+
         firebase_admin.initialize_app(cred)
+
+    except Exception as e:
+        raise RuntimeError(f"Firebase initialization failed: {e}")
 
 
 @router.post("/register")
 def register_user(data: RegisterRequest, authorization: str = Header(None)):
-    init_firebase()
+    try:
+        init_firebase()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
     if not authorization or not authorization.startswith("Bearer "):
         raise HTTPException(status_code=401, detail="Missing Firebase token")
 
-    id_token = authorization.replace("Bearer ", "")
+    id_token = authorization.replace("Bearer ", "").strip()
 
     try:
         decoded_token = auth.verify_id_token(id_token)
@@ -67,7 +102,10 @@ def register_user(data: RegisterRequest, authorization: str = Header(None)):
 
 @router.post("/make-admin")
 def make_admin():
-    init_firebase()
+    try:
+        init_firebase()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
     email = "adminaacn@gmail.com"
 
