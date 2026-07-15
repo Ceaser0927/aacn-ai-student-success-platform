@@ -6,7 +6,7 @@ import { RiQuestionLine } from 'react-icons/ri'
 // deployment), only this block needs to change -- nothing else in the
 // file assumes "student" or "nursing" anywhere.
 const DEPLOYMENT = {
-  apiBase: 'http://127.0.0.1:8000/api',
+  apiBase: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000/api',
   projectName: 'nursing_risk_v1',
   cohortName: 's5_master_dataset',
   subjectLabel: 'Student', // e.g. would be "Patient" for a hospital deployment

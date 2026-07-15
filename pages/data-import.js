@@ -10,7 +10,7 @@ import {
 
 // Point this at wherever your FastAPI backend runs (same host/port as
 // your existing /train, /predict routes).
-const API_BASE = 'http://127.0.0.1:8000/api'
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000/api'
 
 // Smart defaults so most projects need zero manual tweaking to start.
 const DEFAULT_EXCLUDED = ['Peds', 'MS5', 'Pharm', 'Foundation']

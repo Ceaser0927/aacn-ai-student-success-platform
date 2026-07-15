@@ -3,7 +3,7 @@ import { fetchWithAuth } from '../lib/auth'
 
 // Same backend used by recommendations.js -- kept as a local constant here
 // since this page doesn't currently share that admin page's config object.
-const API_BASE = 'http://127.0.0.1:8000/api'
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000/api'
 
 // Course display names now live on the backend (feature_metadata.json) as
 // the single source of truth -- fetched once below, instead of this page
