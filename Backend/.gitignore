@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+.env
+.env.*
+firebase-service-account.json
+.DS_Store
+data/raw/
+data/processed/
+data/predictions/
+ml_generic/uploads/
+analysis_outputs/
+.ipynb_checkpoints/
+
+# Large generated model artifacts
+ml/models/
+
+# Local data and production model data
+data/
+*.ipynb
+
+# Local test projects
+ml_generic/live/test_project/
+ml_generic/staging/

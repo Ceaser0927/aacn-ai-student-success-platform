@@ -1,0 +1,170 @@
+{
+  "high_risk_threshold": 75.0,
+  "excluded_courses": [
+    "Peds",
+    "MS5",
+    "Pharm",
+    "Foundation"
+  ],
+  "exclusion_reason": {
+    "Peds": "Scale mismatch across cohorts (S5 mean~66 vs S6-10 mean~81); degrades held-out performance until recalibrated/investigated.",
+    "MS5": "Only present in S5 cohort, not in training cohorts.",
+    "Pharm": "Missing entirely in S5 and missing in 62/63 rows of S10 -- too unreliably recorded across cohorts to depend on.",
+    "Foundation": "Missing entirely in S5, so any stage using it can't be validated against that held-out cohort."
+  },
+  "course_order_full": [
+    "CT1",
+    "OB",
+    "Comm",
+    "Men",
+    "MS",
+    "CT2",
+    "Leadership"
+  ],
+  "stages": {
+    "stage_ct1_only": {
+      "features": [
+        "CT1"
+      ],
+      "model_path": "/Users/kavsarahmat/Desktop/AACN/APP/Frontend/nursing-dashboard/Backend/ml_highrisk/models/stage_ct1_only.joblib",
+      "n_train": 141,
+      "positive_rate": 0.0993,
+      "loocv_auc": 0.6102,
+      "recommended_threshold": 0.3236,
+      "held_out_results": {
+        "s5": {
+          "n": 38,
+          "auc": 0.3571,
+          "recall": 0.6667,
+          "precision": 0.0606,
+          "n_true_high": 3,
+          "n_flagged": 33,
+          "n_caught": 2
+        },
+        "s10": {
+          "n": 42,
+          "auc": 0.6305,
+          "recall": 1.0,
+          "precision": 0.1951,
+          "n_true_high": 8,
+          "n_flagged": 41,
+          "n_caught": 8
+        }
+      },
+      "reliable": false,
+      "reliability_note": "Held-out recall per cohort: s5=0.6667, s10=1.0. Worst=0.667 (bar=0.7). Does NOT clear the recall bar on at least one cohort -- this stage misses too many true High-risk students to be presented as an actionable flag."
+    },
+    "stage_ct1_ob": {
+      "features": [
+        "CT1",
+        "OB"
+      ],
+      "model_path": "/Users/kavsarahmat/Desktop/AACN/APP/Frontend/nursing-dashboard/Backend/ml_highrisk/models/stage_ct1_ob.joblib",
+      "n_train": 137,
+      "positive_rate": 0.1022,
+      "loocv_auc": 0.5952,
+      "recommended_threshold": 0.3314,
+      "held_out_results": {
+        "s5": {
+          "n": 38,
+          "auc": 0.3524,
+          "recall": 0.6667,
+          "precision": 0.0606,
+          "n_true_high": 3,
+          "n_flagged": 33,
+          "n_caught": 2
+        },
+        "s10": {
+          "n": 37,
+          "auc": 0.6962,
+          "recall": 1.0,
+          "precision": 0.1667,
+          "n_true_high": 6,
+          "n_flagged": 36,
+          "n_caught": 6
+        }
+      },
+      "reliable": false,
+      "reliability_note": "Held-out recall per cohort: s5=0.6667, s10=1.0. Worst=0.667 (bar=0.7). Does NOT clear the recall bar on at least one cohort -- this stage misses too many true High-risk students to be presented as an actionable flag."
+    },
+    "stage_mid_program": {
+      "features": [
+        "CT1",
+        "OB",
+        "Comm",
+        "Men"
+      ],
+      "model_path": "/Users/kavsarahmat/Desktop/AACN/APP/Frontend/nursing-dashboard/Backend/ml_highrisk/models/stage_mid_program.joblib",
+      "n_train": 107,
+      "positive_rate": 0.1028,
+      "loocv_auc": 0.6828,
+      "recommended_threshold": 0.3086,
+      "held_out_results": {
+        "s5": {
+          "n": 38,
+          "auc": 0.8286,
+          "recall": 1.0,
+          "precision": 0.0968,
+          "n_true_high": 3,
+          "n_flagged": 31,
+          "n_caught": 3
+        },
+        "s10": {
+          "n": 37,
+          "auc": 0.6882,
+          "recall": 1.0,
+          "precision": 0.1875,
+          "n_true_high": 6,
+          "n_flagged": 32,
+          "n_caught": 6
+        }
+      },
+      "reliable": true,
+      "reliability_note": "Held-out recall per cohort: s5=1.0, s10=1.0. Worst=1.000 (bar=0.7). Clears the recall bar on every testable cohort."
+    },
+    "stage_late_program": {
+      "features": [
+        "CT1",
+        "OB",
+        "Comm",
+        "Men",
+        "MS",
+        "CT2",
+        "Leadership"
+      ],
+      "model_path": "/Users/kavsarahmat/Desktop/AACN/APP/Frontend/nursing-dashboard/Backend/ml_highrisk/models/stage_late_program.joblib",
+      "n_train": 107,
+      "positive_rate": 0.1028,
+      "loocv_auc": 0.8987,
+      "recommended_threshold": 0.1481,
+      "held_out_results": {
+        "s5": {
+          "n": 38,
+          "auc": 0.7619,
+          "recall": 0.0,
+          "precision": 0.0,
+          "n_true_high": 3,
+          "n_flagged": 5,
+          "n_caught": 0
+        },
+        "s10": {
+          "n": 37,
+          "auc": 0.5538,
+          "recall": 0.1667,
+          "precision": 0.25,
+          "n_true_high": 6,
+          "n_flagged": 4,
+          "n_caught": 1
+        }
+      },
+      "reliable": false,
+      "reliability_note": "Held-out recall per cohort: s5=0.0, s10=0.1667. Worst=0.000 (bar=0.7). Does NOT clear the recall bar on at least one cohort -- this stage misses too many true High-risk students to be presented as an actionable flag."
+    }
+  },
+  "train_cohorts": [
+    "s6",
+    "s7",
+    "s8",
+    "s9"
+  ]
+}

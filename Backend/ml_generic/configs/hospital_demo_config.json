@@ -1,0 +1,20 @@
+{
+  "project_name": "hospital_deterioration_demo",
+  "data_source": "csv",
+  "id_column": "Patient_ID",
+  "target_column": "acuity_score",
+  "risk_direction": "high_is_bad",
+  "risk_threshold": 7.0,
+  "excluded_features": [],
+  "stages": {
+    "stage_vitals_basic": ["heart_rate", "resp_rate"],
+    "stage_vitals_full": ["heart_rate", "resp_rate", "o2_sat", "systolic_bp"],
+    "stage_with_labs": ["heart_rate", "resp_rate", "o2_sat", "systolic_bp", "lactate"]
+  },
+  "train_cohorts": ["hosp_train1", "hosp_train2", "hosp_train3"],
+  "holdout_cohorts": ["hosp_holdout1", "hosp_holdout2"],
+  "data_dir": "../demo_hospital_data/processed",
+  "file_pattern": "{cohort}.csv",
+  "min_train_samples": 30,
+  "reliability_recall_threshold": 0.70
+}

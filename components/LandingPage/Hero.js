@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 // import img from '../Images/img1.png';
 const Hero = () => {
@@ -19,20 +20,22 @@ const Hero = () => {
       <div>
         <h1 className='mx-32 md:text-5xl text-2xl md:leading-normal leading-10 font-bold '>
             <span className='md:text-6xl text-5xl'>
-              <span className=''>Providing </span>
+              <span className=''>Predicting </span>
                <br />
-               <span className='border-b-8 border-[#C4FA6F]'>Inclusive</span>
+               <span className='border-b-8 border-[#C4FA6F]'>student risk</span>
                <br />
-               Healthcare
+               early
                <br />
-              is <span className='border-b-8 border-blue-900'>easy</span>
+              is <span className='border-b-8 border-blue-900'>possible</span>
              </span>
          </h1>
-            <p className='mx-32 pt-3'>get rid of uncultured incompetent service at all<br />
-                 levels of medical care.
+            <p className='mx-32 pt-3'>AI-assisted screening helps faculty identify students who<br />
+                 may need extra support, early enough to make a difference.
             </p>
              <br />
-             <button className='mx-32 pt-18 font-semibold text-white  bg-gray-900 rounded-bl-xl py-3 px-6 flex items-center gap-2'>Get started</button>
+             <Link href='/signup'>
+               <button className='mx-32 pt-18 font-semibold text-white  bg-gray-900 rounded-bl-xl py-3 px-6 flex items-center gap-2'>Get started</button>
+             </Link>
        </div>
      </div>
   </section>

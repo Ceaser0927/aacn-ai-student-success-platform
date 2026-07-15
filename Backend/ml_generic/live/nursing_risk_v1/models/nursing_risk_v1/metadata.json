@@ -1,0 +1,204 @@
+{
+  "project_name": "nursing_risk_v1",
+  "id_column": "Student_ID",
+  "target_column": "Comprehensive",
+  "risk_direction": "low_is_bad",
+  "risk_threshold": 75.0,
+  "excluded_features": [
+    "Pharm",
+    "Foundation",
+    "Peds",
+    "MS5"
+  ],
+  "stages": {
+    "stage_1": {
+      "features": [
+        "CT1"
+      ],
+      "model_path": "/Users/kavsarahmat/Desktop/AACN/APP/Frontend/nursing-dashboard/Backend/ml_generic/staging/nursing_risk_v1/models/nursing_risk_v1/stage_1.joblib",
+      "n_train": 141,
+      "positive_rate": 0.0993,
+      "loocv_auc": 0.6102,
+      "recommended_threshold": 0.3236,
+      "feature_means": {
+        "CT1": 72.961
+      },
+      "feature_coefficients": {
+        "CT1": -0.048068
+      },
+      "held_out_results": {
+        "s5_master_dataset": {
+          "n": 38,
+          "auc": 0.3571,
+          "recall": 0.6667,
+          "precision": 0.0606,
+          "n_true_high": 3,
+          "n_flagged": 33,
+          "n_caught": 2
+        },
+        "s10_master_dataset": {
+          "n": 42,
+          "auc": 0.6305,
+          "recall": 1.0,
+          "precision": 0.1951,
+          "n_true_high": 8,
+          "n_flagged": 41,
+          "n_caught": 8
+        }
+      },
+      "reliable": false,
+      "reliability_note": "Held-out recall per cohort: s5_master_dataset=0.6667, s10_master_dataset=1.0. Worst=0.667 (bar=0.7). Does NOT clear the recall bar on at least one cohort -- this stage misses too many true High-risk cases to be presented as an actionable flag."
+    },
+    "stage_2": {
+      "features": [
+        "CT1",
+        "OB"
+      ],
+      "model_path": "/Users/kavsarahmat/Desktop/AACN/APP/Frontend/nursing-dashboard/Backend/ml_generic/staging/nursing_risk_v1/models/nursing_risk_v1/stage_2.joblib",
+      "n_train": 137,
+      "positive_rate": 0.1022,
+      "loocv_auc": 0.5952,
+      "recommended_threshold": 0.3314,
+      "feature_means": {
+        "CT1": 72.9015,
+        "OB": 77.6479
+      },
+      "feature_coefficients": {
+        "CT1": -0.046416,
+        "OB": -0.020987
+      },
+      "held_out_results": {
+        "s5_master_dataset": {
+          "n": 38,
+          "auc": 0.3524,
+          "recall": 0.6667,
+          "precision": 0.0606,
+          "n_true_high": 3,
+          "n_flagged": 33,
+          "n_caught": 2
+        },
+        "s10_master_dataset": {
+          "n": 37,
+          "auc": 0.6962,
+          "recall": 1.0,
+          "precision": 0.1667,
+          "n_true_high": 6,
+          "n_flagged": 36,
+          "n_caught": 6
+        }
+      },
+      "reliable": false,
+      "reliability_note": "Held-out recall per cohort: s5_master_dataset=0.6667, s10_master_dataset=1.0. Worst=0.667 (bar=0.7). Does NOT clear the recall bar on at least one cohort -- this stage misses too many true High-risk cases to be presented as an actionable flag."
+    },
+    "stage_3": {
+      "features": [
+        "CT1",
+        "OB",
+        "Comm",
+        "Men"
+      ],
+      "model_path": "/Users/kavsarahmat/Desktop/AACN/APP/Frontend/nursing-dashboard/Backend/ml_generic/staging/nursing_risk_v1/models/nursing_risk_v1/stage_3.joblib",
+      "n_train": 107,
+      "positive_rate": 0.1028,
+      "loocv_auc": 0.6828,
+      "recommended_threshold": 0.3086,
+      "feature_means": {
+        "CT1": 73.9486,
+        "OB": 79.0305,
+        "Comm": 79.1227,
+        "Men": 78.7037
+      },
+      "feature_coefficients": {
+        "CT1": -0.03901,
+        "OB": -0.028309,
+        "Comm": 0.03083,
+        "Men": -0.138446
+      },
+      "held_out_results": {
+        "s5_master_dataset": {
+          "n": 38,
+          "auc": 0.8286,
+          "recall": 1.0,
+          "precision": 0.0968,
+          "n_true_high": 3,
+          "n_flagged": 31,
+          "n_caught": 3
+        },
+        "s10_master_dataset": {
+          "n": 37,
+          "auc": 0.6882,
+          "recall": 1.0,
+          "precision": 0.1875,
+          "n_true_high": 6,
+          "n_flagged": 32,
+          "n_caught": 6
+        }
+      },
+      "reliable": true,
+      "reliability_note": "Held-out recall per cohort: s5_master_dataset=1.0, s10_master_dataset=1.0. Worst=1.000 (bar=0.7). Clears the recall bar on every testable cohort."
+    },
+    "stage_4": {
+      "features": [
+        "Leadership",
+        "CT1",
+        "OB",
+        "Comm",
+        "Men",
+        "MS",
+        "CT2"
+      ],
+      "model_path": "/Users/kavsarahmat/Desktop/AACN/APP/Frontend/nursing-dashboard/Backend/ml_generic/staging/nursing_risk_v1/models/nursing_risk_v1/stage_4.joblib",
+      "n_train": 107,
+      "positive_rate": 0.1028,
+      "loocv_auc": 0.8987,
+      "recommended_threshold": 0.1482,
+      "feature_means": {
+        "Leadership": 79.4118,
+        "CT1": 73.9486,
+        "OB": 79.0305,
+        "Comm": 79.1227,
+        "Men": 78.7037,
+        "MS": 80.99,
+        "CT2": 75.6153
+      },
+      "feature_coefficients": {
+        "Leadership": 0.220188,
+        "CT1": -0.149414,
+        "OB": 0.067457,
+        "Comm": -0.060593,
+        "Men": 0.022646,
+        "MS": -0.875428,
+        "CT2": 0.047959
+      },
+      "held_out_results": {
+        "s5_master_dataset": {
+          "n": 38,
+          "auc": 0.7619,
+          "recall": 0.0,
+          "precision": 0.0,
+          "n_true_high": 3,
+          "n_flagged": 5,
+          "n_caught": 0
+        },
+        "s10_master_dataset": {
+          "n": 37,
+          "auc": 0.5538,
+          "recall": 0.1667,
+          "precision": 0.2,
+          "n_true_high": 6,
+          "n_flagged": 5,
+          "n_caught": 1
+        }
+      },
+      "reliable": false,
+      "reliability_note": "Held-out recall per cohort: s5_master_dataset=0.0, s10_master_dataset=0.1667. Worst=0.000 (bar=0.7). Does NOT clear the recall bar on at least one cohort -- this stage misses too many true High-risk cases to be presented as an actionable flag."
+    }
+  },
+  "train_cohorts": [
+    "s6_master_dataset",
+    "s9_master_dataset",
+    "s8_master_dataset",
+    "s7_master_dataset"
+  ],
+  "reliability_recall_threshold": 0.7
+}

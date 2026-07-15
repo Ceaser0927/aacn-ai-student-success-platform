@@ -1,0 +1,21 @@
+{
+  "project_name": "nursing_student_risk",
+  "data_source": "csv",
+  "id_column": "Student_ID",
+  "target_column": "Comprehensive",
+  "risk_direction": "low_is_bad",
+  "risk_threshold": 75.0,
+  "excluded_features": ["Peds", "MS5", "Pharm", "Foundation"],
+  "stages": {
+    "stage_ct1_only": ["CT1"],
+    "stage_ct1_ob": ["CT1", "OB"],
+    "stage_mid_program": ["CT1", "OB", "Comm", "Men"],
+    "stage_late_program": ["CT1", "OB", "Comm", "Men", "MS", "CT2", "Leadership"]
+  },
+  "train_cohorts": ["s6", "s7", "s8", "s9"],
+  "holdout_cohorts": ["s5", "s10"],
+  "data_dir": "../../data/processed",
+  "file_pattern": "{cohort}_master_dataset.csv",
+  "min_train_samples": 30,
+  "reliability_recall_threshold": 0.70
+}
