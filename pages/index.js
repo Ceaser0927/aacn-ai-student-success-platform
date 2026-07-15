@@ -11,7 +11,7 @@ import {
 // To point this same page at a different project (e.g. a future hospital
 // deployment), only this block needs to change.
 const DEPLOYMENT = {
-  apiBase: 'http://127.0.0.1:8000/api',
+  apiBase: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000/api',
   projectName: 'nursing_risk_v1',
   cohortName: 's5_master_dataset',
   subjectLabel: 'student', // lowercase, used inline in sentences; e.g. "patient" for a hospital deployment
