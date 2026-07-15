@@ -1,0 +1,52 @@
+{
+  "project_name": "nursing_risk_v1",
+  "data_source": "csv",
+  "id_column": "Student_ID",
+  "target_column": "Comprehensive",
+  "risk_direction": "low_is_bad",
+  "risk_threshold": 75.0,
+  "excluded_features": [
+    "Pharm",
+    "Foundation",
+    "Peds",
+    "MS5"
+  ],
+  "stages": {
+    "stage_1": [
+      "CT1"
+    ],
+    "stage_2": [
+      "CT1",
+      "OB"
+    ],
+    "stage_3": [
+      "CT1",
+      "OB",
+      "Comm",
+      "Men"
+    ],
+    "stage_4": [
+      "Leadership",
+      "CT1",
+      "OB",
+      "Comm",
+      "Men",
+      "MS",
+      "CT2"
+    ]
+  },
+  "train_cohorts": [
+    "s6_master_dataset",
+    "s9_master_dataset",
+    "s8_master_dataset",
+    "s7_master_dataset"
+  ],
+  "holdout_cohorts": [
+    "s5_master_dataset",
+    "s10_master_dataset"
+  ],
+  "data_dir": "/Users/kavsarahmat/Desktop/AACN/APP/Frontend/nursing-dashboard/Backend/ml_generic/uploads/nursing_risk_v1/processed",
+  "file_pattern": "{cohort}.csv",
+  "min_train_samples": 30,
+  "reliability_recall_threshold": 0.7
+}

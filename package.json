@@ -21,7 +21,7 @@
     "@nivo/tooltip": "^0.80.0",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
-    "firebase": "^9.13.0",
+    "firebase": "^9.23.0",
     "moment": "^2.29.4",
     "next": "13.0.2",
     "next-auth": "^4.16.4",

@@ -22,7 +22,7 @@ const Navbar = () => {
                 <Link href='#'><li>Our offerings</li></Link>
                 <Link href='#'><li>Prising</li></Link>
                 <Link href='#'><li>Blog</li></Link>
-                <button>Login</button>
+                <Link href='/login'><button>Login</button></Link>
             </ul>
         </div>
     </div>

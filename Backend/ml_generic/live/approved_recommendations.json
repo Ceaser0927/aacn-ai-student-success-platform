@@ -1,0 +1,92 @@
+{
+  "55450.0": {
+    "subject_id": "55450.0",
+    "probability": 0.9485,
+    "text": "We wanted to check in because your progress in Mental Health Nursing has been noticeably below where we typically see it at this point. This is the main reason you're seeing this message. Community Health Nursing and Obstetric Nursing came up as secondary factors too.321321\n\nA few things that might help:\n\u2022 your program's counseling or wellness resources\n\u2022 a study group focused on this course\n\u2022 your program's writing/academic support center\n\u2022 office hours with your instructor\n\nWe'd also encourage you to reach out to your instructor or academic advisor directly -- they can point you to what's specifically available in your program.",
+    "factual_basis": "Based on: Mental Health Nursing score 62.9, 15.8 points below average (cohort average 78.7).",
+    "top_factors": [
+      {
+        "feature": "Men",
+        "value": 62.9,
+        "cohort_average": 78.7,
+        "direction": "below average",
+        "contribution": 2.188
+      },
+      {
+        "feature": "Comm",
+        "value": 93.3,
+        "cohort_average": 79.12,
+        "direction": "above average",
+        "contribution": 0.4371
+      },
+      {
+        "feature": "OB",
+        "value": 65.5,
+        "cohort_average": 79.03,
+        "direction": "below average",
+        "contribution": 0.383
+      }
+    ],
+    "status": "approved"
+  },
+  "63273.0": {
+    "subject_id": "63273.0",
+    "probability": 0.7181,
+    "text": "We wanted to check in because your progress in Mental Health Nursing has been somewhat below where we typically see it at this point. This is the main reason you're seeing this message. Critical Thinking Assessment 1 and Obstetric Nursing came up as secondary factors too.\n\nA few things that might help:\n\u2022 your program's counseling or wellness resources\n\u2022 a study group focused on this course\n\u2022 NCLEX-style critical thinking practice questions\n\u2022 a study group with peers who've completed this course\n\nWe'd also encourage you to reach out to your instructor or academic advisor directly -- they can point you to what's specifically available in your program.",
+    "factual_basis": "Based on: Mental Health Nursing score 71.7, 7.0 points below average (cohort average 78.7).",
+    "top_factors": [
+      {
+        "feature": "Men",
+        "value": 71.7,
+        "cohort_average": 78.7,
+        "direction": "below average",
+        "contribution": 0.9696
+      },
+      {
+        "feature": "CT1",
+        "value": 57.5,
+        "cohort_average": 73.95,
+        "direction": "below average",
+        "contribution": 0.6417
+      },
+      {
+        "feature": "OB",
+        "value": 82.2,
+        "cohort_average": 79.03,
+        "direction": "above average",
+        "contribution": -0.0897
+      }
+    ],
+    "status": "approved"
+  },
+  "55450": {
+    "subject_id": "55450",
+    "probability": 0.9485,
+    "text": "We wanted to reach out about your performance in Mental Health Nursing. We'd like to help you build on your strengths in this course.123123123-11111\n\nA few things that might help:\n\u2022 Your program's counseling or wellness resources\n\u2022 A study group focused on this course\n\u2022 Your program's writing/academic support center\n\u2022 Office hours with your instructor\n\u2022 Your course's case-study review materials\n\u2022 The simulation/skills lab for extra practice\n\nPlease don't hesitate to connect with your instructor or academic advisor\u2014they're here to support you and can point you toward the resources that will work best for your learning style.",
+    "factual_basis": "Based on: Mental Health Nursing score 62.9, 15.8 points below average (cohort average 78.7).",
+    "top_factors": [
+      {
+        "feature": "Men",
+        "value": 62.9,
+        "cohort_average": 78.7,
+        "direction": "below average",
+        "contribution": 2.188
+      },
+      {
+        "feature": "Comm",
+        "value": 93.3,
+        "cohort_average": 79.12,
+        "direction": "above average",
+        "contribution": 0.4371
+      },
+      {
+        "feature": "OB",
+        "value": 65.5,
+        "cohort_average": 79.03,
+        "direction": "below average",
+        "contribution": 0.383
+      }
+    ],
+    "status": "approved"
+  }
+}

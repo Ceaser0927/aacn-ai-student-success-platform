@@ -1,0 +1,72 @@
+{
+  "_comment": "PLACEHOLDER VALUES -- display_name is guessed and needs verification. Every resource_hints[].url below is a DUMMY PLACEHOLDER (starts with https://REPLACE-ME) and is intentionally NOT a real, clickable link -- Claude never invents these; only Ceaser should type in a real, verified URL here. Until a url is replaced with a real one, set it to null and the frontend will show the label as plain (non-clickable) text instead of a broken link. See project summary section 5, item 5.",
+
+  "CT1": {
+    "display_name": "Critical Thinking Assessment 1",
+    "resource_hints": [
+      {
+        "label": "Critical thinking case-study review",
+        "url": "https://REPLACE-ME.example.edu/ct1-case-studies"
+      },
+      {
+        "label": "NCLEX-style practice questions",
+        "url": "https://REPLACE-ME.example.edu/ct1-nclex-practice"
+      },
+      {
+        "label": "Instructor office hours",
+        "url": null
+      }
+    ]
+  },
+  "OB": {
+    "display_name": "Obstetrics Nursing",
+    "resource_hints": [
+      {
+        "label": "OB simulation lab session",
+        "url": null
+      },
+      {
+        "label": "Clinical rotation debrief",
+        "url": null
+      },
+      {
+        "label": "Peer study group",
+        "url": "https://REPLACE-ME.example.edu/ob-study-group-signup"
+      }
+    ]
+  },
+  "Comm": {
+    "display_name": "Communication in Nursing",
+    "resource_hints": [
+      {
+        "label": "Communication skills workshop",
+        "url": "https://REPLACE-ME.example.edu/comm-workshop"
+      },
+      {
+        "label": "Peer role-play practice",
+        "url": null
+      },
+      {
+        "label": "Faculty advisor meeting",
+        "url": null
+      }
+    ]
+  },
+  "Men": {
+    "display_name": "Mental Health Nursing",
+    "resource_hints": [
+      {
+        "label": "Mental health case-study review",
+        "url": "https://REPLACE-ME.example.edu/mental-health-case-studies"
+      },
+      {
+        "label": "Simulation/skills lab",
+        "url": null
+      },
+      {
+        "label": "Instructor office hours",
+        "url": null
+      }
+    ]
+  }
+}
